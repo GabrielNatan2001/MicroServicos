@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicos.ProductAPI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.CartAPI", "MicroServicos.CartAPI\MicroServicos.CartAPI.csproj", "{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.CouponAPI", "MicroServicos.CouponAPI\MicroServicos.CouponAPI.csproj", "{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{A7DCB824-1771-48FA-84AC-AE51CABB2987} = {3DA3F547-6010-4F27-B1ED-039123A2725D}
 		{726F89E1-06C7-4D01-B41B-E2EC417219CD} = {13406B87-9357-4BBF-98F5-A55375878755}
 		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390} = {13406B87-9357-4BBF-98F5-A55375878755}
+		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC} = {13406B87-9357-4BBF-98F5-A55375878755}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49674059-72BE-4A31-A45E-F85DA2839D22}

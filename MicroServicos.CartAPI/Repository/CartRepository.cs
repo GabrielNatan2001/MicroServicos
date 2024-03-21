@@ -16,12 +16,6 @@ namespace MicroServicos.CartAPI.Repository
             _context = context;
             _mapper = mapper;
         }
-
-        public async Task<bool> ApplyCoupon(string userId, string couponCode)
-        {
-            throw new NotImplementedException();
-        }
-
         public async Task<bool> ClearCart(string userId)
         {
             var cartHeader = await _context.CartHeaders.FirstOrDefaultAsync(c => c.UserId == userId);
@@ -49,11 +43,6 @@ namespace MicroServicos.CartAPI.Repository
                 .Include(c => c.Product);
 
             return _mapper.Map<CartVO>(cart);
-        }
-
-        public async Task<bool> RemoveCoupon(string userId)
-        {
-            throw new NotImplementedException();
         }
 
         public async Task<bool> RemoveFromCart(long cartDetailsId)
@@ -124,6 +113,31 @@ namespace MicroServicos.CartAPI.Repository
 
             return _mapper.Map<CartVO>(entity);
 
+        }
+        public async Task<bool> ApplyCoupon(string userId, string couponCode)
+        {
+            var header = await _context.CartHeaders.FirstOrDefaultAsync(c => c.UserId == userId);
+            if (header != null)
+            {
+                header.CouponCode = couponCode;
+                _context.CartHeaders.Update(header);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+
+        public async Task<bool> RemoveCoupon(string userId)
+        {
+            var header = await _context.CartHeaders.FirstOrDefaultAsync(c => c.UserId == userId);
+            if (header != null)
+            {
+                header.CouponCode = "";
+                _context.CartHeaders.Update(header);
+                await _context.SaveChangesAsync();
+                return true;
+            }
+            return false;
         }
     }
 }

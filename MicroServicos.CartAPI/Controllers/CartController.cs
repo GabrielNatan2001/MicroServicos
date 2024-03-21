@@ -1,4 +1,5 @@
 ﻿using MicroServicos.CartAPI.Data.ValueObjects;
+using MicroServicos.CartAPI.Messages;
 using MicroServicos.CartAPI.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -53,5 +54,36 @@ namespace MicroServicos.CartAPI.Controllers
             return Ok();
         }
 
+        [HttpPost("apply-coupon")]
+        public async Task<IActionResult> ApplyCoupon(CartVO vo)
+        {
+            var result = await _repository.ApplyCoupon(vo.CartHeader.UserId, vo.CartHeader.CouponCode);
+            if (!result)
+                return NotFound();
+            return Ok(result);
+        }
+
+        [HttpDelete("remove-coupon/{userId}")]
+        public async Task<IActionResult> RemoveCoupon(string userId)
+        {
+            var result = await _repository.RemoveCoupon(userId);
+            if (!result)
+                return NotFound();
+            return Ok(result);
+        }
+
+        [HttpPost("checkout")]
+        public async Task<IActionResult> Checkou(CheckouHeaderVO vo)
+        {
+            var cart = await _repository.FindCartByUserId(vo.UserId);
+            if (cart == null)
+                return NotFound();
+            vo.CartDetails = cart.CartDetails;
+            vo.DateTime = DateTime.Now;
+
+            //Task RabbitMQ 
+
+            return Ok(vo);
+        }
     }
 }
