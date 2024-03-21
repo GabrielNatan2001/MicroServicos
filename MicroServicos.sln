@@ -7,9 +7,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FrontEnd", "FrontEnd", "{3D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{13406B87-9357-4BBF-98F5-A55375878755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.Web", "MicroServicos.Web\MicroServicos.Web.csproj", "{A7DCB824-1771-48FA-84AC-AE51CABB2987}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicos.Web", "MicroServicos.Web\MicroServicos.Web.csproj", "{A7DCB824-1771-48FA-84AC-AE51CABB2987}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.ProductAPI", "MicroServicos.ProductAPI\MicroServicos.ProductAPI.csproj", "{726F89E1-06C7-4D01-B41B-E2EC417219CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicos.ProductAPI", "MicroServicos.ProductAPI\MicroServicos.ProductAPI.csproj", "{726F89E1-06C7-4D01-B41B-E2EC417219CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.CartAPI", "MicroServicos.CartAPI\MicroServicos.CartAPI.csproj", "{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{726F89E1-06C7-4D01-B41B-E2EC417219CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{726F89E1-06C7-4D01-B41B-E2EC417219CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{726F89E1-06C7-4D01-B41B-E2EC417219CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +38,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{A7DCB824-1771-48FA-84AC-AE51CABB2987} = {3DA3F547-6010-4F27-B1ED-039123A2725D}
 		{726F89E1-06C7-4D01-B41B-E2EC417219CD} = {13406B87-9357-4BBF-98F5-A55375878755}
+		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390} = {13406B87-9357-4BBF-98F5-A55375878755}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49674059-72BE-4A31-A45E-F85DA2839D22}
