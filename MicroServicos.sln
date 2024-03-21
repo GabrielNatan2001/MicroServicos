@@ -15,6 +15,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.CartAPI", "Mi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.CouponAPI", "MicroServicos.CouponAPI\MicroServicos.CouponAPI.csproj", "{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{2164B57F-FF69-4041-92BC-78F657FF18E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.MessageBus", "MicroServicos.MessageBus\MicroServicos.MessageBus.csproj", "{B5C4FBDC-3F41-4660-86EA-87C259A89A22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +41,10 @@ Global
 		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5C4FBDC-3F41-4660-86EA-87C259A89A22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5C4FBDC-3F41-4660-86EA-87C259A89A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5C4FBDC-3F41-4660-86EA-87C259A89A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5C4FBDC-3F41-4660-86EA-87C259A89A22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +54,7 @@ Global
 		{726F89E1-06C7-4D01-B41B-E2EC417219CD} = {13406B87-9357-4BBF-98F5-A55375878755}
 		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390} = {13406B87-9357-4BBF-98F5-A55375878755}
 		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC} = {13406B87-9357-4BBF-98F5-A55375878755}
+		{B5C4FBDC-3F41-4660-86EA-87C259A89A22} = {2164B57F-FF69-4041-92BC-78F657FF18E2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49674059-72BE-4A31-A45E-F85DA2839D22}

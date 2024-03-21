@@ -1,5 +1,6 @@
 ﻿using MicroServicos.CartAPI.Data.ValueObjects;
 using MicroServicos.CartAPI.Messages;
+using MicroServicos.CartAPI.RabbitMQSender;
 using MicroServicos.CartAPI.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -11,10 +12,12 @@ namespace MicroServicos.CartAPI.Controllers
     public class CartController : ControllerBase
     {
         private ICartRepository _repository;
+        private IRabbitMQMessageSender _rabbitMQMessageSender;
 
-        public CartController(ICartRepository repository)
+        public CartController(ICartRepository repository, IRabbitMQMessageSender rabbitMQMessageSender)
         {
             _repository = repository ?? throw new ArgumentException(nameof(repository));
+            _rabbitMQMessageSender = rabbitMQMessageSender ?? throw new ArgumentException(nameof(rabbitMQMessageSender));
         }
 
 
@@ -75,6 +78,9 @@ namespace MicroServicos.CartAPI.Controllers
         [HttpPost("checkout")]
         public async Task<IActionResult> Checkou(CheckouHeaderVO vo)
         {
+            if(vo?.UserId == null)
+                return BadRequest();
+
             var cart = await _repository.FindCartByUserId(vo.UserId);
             if (cart == null)
                 return NotFound();
@@ -82,6 +88,7 @@ namespace MicroServicos.CartAPI.Controllers
             vo.DateTime = DateTime.Now;
 
             //Task RabbitMQ 
+            _rabbitMQMessageSender.SendMessage(vo, "checkoutqueue");
 
             return Ok(vo);
         }
