@@ -11,13 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicos.Web", "MicroS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicos.ProductAPI", "MicroServicos.ProductAPI\MicroServicos.ProductAPI.csproj", "{726F89E1-06C7-4D01-B41B-E2EC417219CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.CartAPI", "MicroServicos.CartAPI\MicroServicos.CartAPI.csproj", "{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicos.CartAPI", "MicroServicos.CartAPI\MicroServicos.CartAPI.csproj", "{0DF28EF8-3E9B-474A-B5A4-5C15398A1390}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.CouponAPI", "MicroServicos.CouponAPI\MicroServicos.CouponAPI.csproj", "{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicos.CouponAPI", "MicroServicos.CouponAPI\MicroServicos.CouponAPI.csproj", "{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Integration", "Integration", "{2164B57F-FF69-4041-92BC-78F657FF18E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.MessageBus", "MicroServicos.MessageBus\MicroServicos.MessageBus.csproj", "{B5C4FBDC-3F41-4660-86EA-87C259A89A22}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MicroServicos.MessageBus", "MicroServicos.MessageBus\MicroServicos.MessageBus.csproj", "{B5C4FBDC-3F41-4660-86EA-87C259A89A22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.OrderAPI", "MicroServicos.OrderAPI\MicroServicos.OrderAPI.csproj", "{0C1F3461-7EDF-4FB9-94FE-F1777038A842}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{B5C4FBDC-3F41-4660-86EA-87C259A89A22}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5C4FBDC-3F41-4660-86EA-87C259A89A22}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5C4FBDC-3F41-4660-86EA-87C259A89A22}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C1F3461-7EDF-4FB9-94FE-F1777038A842}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C1F3461-7EDF-4FB9-94FE-F1777038A842}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C1F3461-7EDF-4FB9-94FE-F1777038A842}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C1F3461-7EDF-4FB9-94FE-F1777038A842}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +61,7 @@ Global
 		{0DF28EF8-3E9B-474A-B5A4-5C15398A1390} = {13406B87-9357-4BBF-98F5-A55375878755}
 		{B355EC64-0FAD-4DE4-BCD2-1CBB39C553EC} = {13406B87-9357-4BBF-98F5-A55375878755}
 		{B5C4FBDC-3F41-4660-86EA-87C259A89A22} = {2164B57F-FF69-4041-92BC-78F657FF18E2}
+		{0C1F3461-7EDF-4FB9-94FE-F1777038A842} = {13406B87-9357-4BBF-98F5-A55375878755}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49674059-72BE-4A31-A45E-F85DA2839D22}
