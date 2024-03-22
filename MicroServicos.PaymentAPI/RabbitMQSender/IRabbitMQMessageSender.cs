@@ -4,6 +4,6 @@ namespace MicroServicos.PaymentAPI.RabbitMQSender
 {
     public interface IRabbitMQMessageSender
     {
-        void SendMessage(BaseMessage baseMessage, string queuName);
+        void SendMessage(BaseMessage baseMessage);
     }
 }

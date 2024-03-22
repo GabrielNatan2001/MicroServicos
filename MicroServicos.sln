@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.PaymentProces
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.PaymentAPI", "MicroServicos.PaymentAPI\MicroServicos.PaymentAPI.csproj", "{F8DD03E9-772B-43EB-882B-D50392892ED0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.Email", "MicroServicos.Email\MicroServicos.Email.csproj", "{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -65,6 +67,10 @@ Global
 		{F8DD03E9-772B-43EB-882B-D50392892ED0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8DD03E9-772B-43EB-882B-D50392892ED0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8DD03E9-772B-43EB-882B-D50392892ED0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +84,7 @@ Global
 		{0C1F3461-7EDF-4FB9-94FE-F1777038A842} = {13406B87-9357-4BBF-98F5-A55375878755}
 		{D1AB5326-89C9-422D-837C-BABA972F9F81} = {5E1F5E3F-DF02-4F55-AA13-78FF649C4B40}
 		{F8DD03E9-772B-43EB-882B-D50392892ED0} = {13406B87-9357-4BBF-98F5-A55375878755}
+		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639} = {13406B87-9357-4BBF-98F5-A55375878755}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49674059-72BE-4A31-A45E-F85DA2839D22}

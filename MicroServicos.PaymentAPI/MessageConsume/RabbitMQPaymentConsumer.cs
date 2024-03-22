@@ -61,7 +61,7 @@ namespace MicroServicos.PaymentAPI.MessageConsume
 
             try
             {
-                _rabbitMQMessageSender.SendMessage(paymentResult, "orderpaymentresultqueue");
+                _rabbitMQMessageSender.SendMessage(paymentResult);
             }
             catch (Exception)
             {

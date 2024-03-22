@@ -12,6 +12,9 @@ namespace MicroServicos.PaymentAPI.RabbitMQSender
         private readonly string _password;
         private readonly string _userName;
         private IConnection _connection;
+        private const string ExchangeName = "DirectPaymentExchange";
+        private const string PaymentEmailUpdateQueueName = "PaymentEmailUpdateQueueName";
+        private const string PaymentOrderUpdateQueueName = "PaymentOrderUpdateQueueName";
 
         public RabbitMQMessageSender()
         {
@@ -20,15 +23,25 @@ namespace MicroServicos.PaymentAPI.RabbitMQSender
             _userName = "guest";
         }
 
-        public void SendMessage(BaseMessage message, string queuName)
+        public void SendMessage(BaseMessage message)
         {
             if (ConnectionExists())
             {
                 using var channel = _connection.CreateModel();
-                channel.QueueDeclare(queue: queuName, false, false, false, arguments: null);
+                //Cria fila normal
+                //channel.QueueDeclare(queue: queuName, false, false, false, arguments: null);
+                //Cria exchange
+                channel.ExchangeDeclare(ExchangeName, ExchangeType.Direct, durable: false);
+
+                channel.QueueDeclare(PaymentEmailUpdateQueueName, false, false, false, null);
+                channel.QueueDeclare(PaymentOrderUpdateQueueName, false, false, false, null);
+
+                channel.QueueBind(PaymentEmailUpdateQueueName, ExchangeName, "PaymentEmail");
+                channel.QueueBind(PaymentOrderUpdateQueueName, ExchangeName, "PaymentOrder");
 
                 byte[] body = GetMessageAsByteArray(message);
-                channel.BasicPublish(exchange: "", routingKey: queuName, basicProperties: null, body: body);
+                channel.BasicPublish(exchange: ExchangeName, "PaymentEmail", basicProperties: null, body: body);
+                channel.BasicPublish(exchange: ExchangeName, "PaymentOrder", basicProperties: null, body: body);
             }
         }
 
