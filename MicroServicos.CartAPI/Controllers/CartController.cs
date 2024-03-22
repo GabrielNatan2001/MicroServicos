@@ -21,10 +21,10 @@ namespace MicroServicos.CartAPI.Controllers
         }
 
 
-        [HttpGet("find-cart/{id}")]
-        public async Task<IActionResult> FindById(string userId)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> FindById(string id)
         {
-            var cart = await _repository.FindCartByUserId(userId);
+            var cart = await _repository.FindCartByUserId(id);
             if (cart == null)
                 return NotFound();
             return Ok(cart);

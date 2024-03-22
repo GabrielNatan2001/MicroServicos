@@ -29,6 +29,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.PaymentAPI", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.Email", "MicroServicos.Email\MicroServicos.Email.csproj", "{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{76BAB01E-D980-4902-B5AE-5136B58042C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroServicos.APIGateway", "MicroServicos.APIGateway\MicroServicos.APIGateway.csproj", "{D048619F-7163-434D-B1F6-52BD7AE533DB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +75,10 @@ Global
 		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D048619F-7163-434D-B1F6-52BD7AE533DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D048619F-7163-434D-B1F6-52BD7AE533DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D048619F-7163-434D-B1F6-52BD7AE533DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D048619F-7163-434D-B1F6-52BD7AE533DB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +93,7 @@ Global
 		{D1AB5326-89C9-422D-837C-BABA972F9F81} = {5E1F5E3F-DF02-4F55-AA13-78FF649C4B40}
 		{F8DD03E9-772B-43EB-882B-D50392892ED0} = {13406B87-9357-4BBF-98F5-A55375878755}
 		{4B42E78E-EB68-40EA-9DD6-E1D83A24A639} = {13406B87-9357-4BBF-98F5-A55375878755}
+		{D048619F-7163-434D-B1F6-52BD7AE533DB} = {76BAB01E-D980-4902-B5AE-5136B58042C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49674059-72BE-4A31-A45E-F85DA2839D22}
