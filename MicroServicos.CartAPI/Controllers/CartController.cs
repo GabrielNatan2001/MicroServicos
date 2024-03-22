@@ -90,6 +90,8 @@ namespace MicroServicos.CartAPI.Controllers
             //Task RabbitMQ 
             _rabbitMQMessageSender.SendMessage(vo, "checkoutqueue");
 
+            await _repository.ClearCart(vo.UserId);
+
             return Ok(vo);
         }
     }

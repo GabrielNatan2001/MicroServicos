@@ -2,6 +2,7 @@ using MicroServicos.OrderAPI.Model.Context;
 using MicroServicos.OrderAPI.Repository;
 using MicroServicos.OrderAPI.MessageConsume;
 using Microsoft.EntityFrameworkCore;
+using MicroServicos.OrderAPI.RabbitMQSender;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +25,8 @@ builderContext.UseSqlServer(connection);
 builder.Services.AddSingleton(new OrderRepository(builderContext.Options));
 
 builder.Services.AddHostedService<RabbitMQCheckoutConsumer>();
+builder.Services.AddHostedService<RabbitMQPaymentConsumer>();
+builder.Services.AddSingleton<IRabbitMQMessageSender, RabbitMQMessageSender>();
 
 var app = builder.Build();
 

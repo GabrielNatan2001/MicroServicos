@@ -5,6 +5,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System.Text;
 using System.Text.Json;
+using MicroServicos.OrderAPI.RabbitMQSender;
 
 namespace MicroServicos.OrderAPI.MessageConsume
 {
@@ -13,10 +14,11 @@ namespace MicroServicos.OrderAPI.MessageConsume
         private readonly OrderRepository _repository;
         private IConnection _connection;
         private IModel _channel;
-
-        public RabbitMQCheckoutConsumer(OrderRepository repository)
+        private IRabbitMQMessageSender _rabbitMQMessageSender;
+        public RabbitMQCheckoutConsumer(OrderRepository repository, IRabbitMQMessageSender rabbitMQMessageSender)
         {
             _repository = repository;
+            _rabbitMQMessageSender = rabbitMQMessageSender;
 
             var factory = new ConnectionFactory
             {
@@ -83,6 +85,27 @@ namespace MicroServicos.OrderAPI.MessageConsume
             }
 
             await _repository.AddOrder(order);
+
+            PaymentVO payment = new PaymentVO
+            {
+                Name = order.FirstName + " " + order.LastName,
+                CardNumber = order.CardNumber,
+                CVV = order.CVV,
+                ExpiryMonthYear = order.ExpiryMonthYear,
+                OrderId = order.Id,
+                PurchaseAmount = order.PurchaseAmount,
+                Email = order.Email
+            };
+
+            try
+            {
+                _rabbitMQMessageSender.SendMessage(payment, "orderpaymentprocessqueue");
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

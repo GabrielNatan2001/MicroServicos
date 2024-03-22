@@ -1,10 +1,10 @@
-﻿using MicroServicos.CartAPI.Messages;
+﻿using MicroServicos.PaymentAPI.Messages;
 using MicroServicos.MessageBus;
 using RabbitMQ.Client;
 using System.Text;
 using System.Text.Json;
 
-namespace MicroServicos.CartAPI.RabbitMQSender
+namespace MicroServicos.PaymentAPI.RabbitMQSender
 {
     public class RabbitMQMessageSender : IRabbitMQMessageSender
     {
@@ -38,7 +38,7 @@ namespace MicroServicos.CartAPI.RabbitMQSender
             {
                 WriteIndented = true,
             };
-            var json = JsonSerializer.Serialize<CheckouHeaderVO>((CheckouHeaderVO)message, options);
+            var json = JsonSerializer.Serialize<UpdatePaymentResultMessage>((UpdatePaymentResultMessage)message, options);
             var body = Encoding.UTF8.GetBytes(json);
             return body;
         }
